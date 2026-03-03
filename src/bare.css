@@ -143,3 +143,26 @@ h4 { font-size: var(--step-0); }
   outline: 2px dashed oklch(60% 0.15 250deg / 50%) !important;
   background: oklch(60% 0.15 250deg / 5%);
 }
+
+/* Grid Debugger */
+[data-debug="true"] .container,
+.debug-grid {
+  position: relative;
+}
+
+[data-debug="true"] .container::after,
+.debug-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: repeating-linear-gradient(
+    to right,
+    oklch(60% 0.15 250deg / 0.1) 0px,
+    oklch(60% 0.15 250deg / 0.1) calc((100% - (11 * var(--gutter, 1rem))) / 12),
+    transparent calc((100% - (11 * var(--gutter, 1rem))) / 12),
+    transparent calc((100% - (11 * var(--gutter, 1rem))) / 12 + var(--gutter, 1rem))
+  );
+  outline: 1px dashed oklch(60% 0.15 250deg / 0.3);
+}

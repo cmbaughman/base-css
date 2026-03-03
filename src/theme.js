@@ -13,3 +13,14 @@ export const initTheme = () => {
     localStorage.setItem('theme', newTheme);
   });
 };
+
+export const initDebug = () => {
+  window.addEventListener('keydown', (e) => {
+    // Toggle grid with Ctrl + Shift + G
+    if (e.ctrlKey && e.shiftKey && e.key === 'G') {
+      const isDebug = document.documentElement.getAttribute('data-debug') === 'true';
+      document.documentElement.setAttribute('data-debug', !isDebug);
+      console.log(`🛠 Bare-mod: Debug mode ${!isDebug ? 'ON' : 'OFF'}`);
+    }
+  });
+};
