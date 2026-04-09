@@ -4,10 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bare-Mod Dev Lab</title>
+  <link rel="icon" type="image/x-icon" href="https://s3.us-east-1.amazonaws.com/cmb.codes/images/favicon.ico">
   
   <link rel="stylesheet" href="./src/bare.css">
+  <style>
+    body {
+      font-family: var(--font-main, system-ui, sans-serif);
+    }
+  </style>
 </head>
-<body>
+<body data-debug="true">
 
   <header class="p-4 bg-primary">
     <h1>bare-mod</h1>
@@ -62,7 +68,7 @@
   <script type="module">
     import { loadFont, presets } from './src/fonts.js';
     // Test a preset (Try changing 'inter' to 'playfair' or 'fira'!)
-    loadFont(presets.inter);
+    loadFont(presets.roboto);
 
     // Quick Debug Toggle
     window.addEventListener('keydown', (e) => {
